@@ -1,5 +1,8 @@
 {
-  "name"    : "med-sherlock",
-  "version" : "0.1.0",
-  "main"    : "main.js"
+  "name": "med-sherlock",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
 }

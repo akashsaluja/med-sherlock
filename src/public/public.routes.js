@@ -19,6 +19,10 @@ function routeConfig ($stateProvider) {
       url: '/',
       templateUrl: 'src/public/html/new.html'
     })
+    .state('public.opds', {
+      url: '/opds',
+      templateUrl: 'src/public/html/opds.html'
+    })
     // .state('public.menu', {
     //   url: '/menu',
     //   templateUrl: 'src/public/menu/menu.html',

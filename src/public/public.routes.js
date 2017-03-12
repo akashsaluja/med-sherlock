@@ -17,7 +17,9 @@ function routeConfig ($stateProvider) {
     })
     .state('public.new', {
       url: '/',
-      templateUrl: 'src/public/html/new.html'
+      templateUrl: 'src/public/html/new.html',
+      controller: 'NewPatientController',
+      controllerAs: 'patientCtrl'
     })
     .state('public.opds', {
       url: '/opds',

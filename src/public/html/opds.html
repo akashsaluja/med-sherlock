@@ -4,8 +4,20 @@
   <input type="submit" class="btn btn-default" ng-click="opdCtrl.submit()">
 </form>
 
-<span ng-if="$ctrl.opds"> Patients: <br/>
+
+<span ng-if="opdCtrl.opds.length > 0">  <h2>
+    <font color= "blue"> Patients: </font><br/> </h2>
 </span>
 <ol>
-    <li ng-repeat="patient in opdCtrl.opds"> {{patient.name}} </li>
+    <h4> <font color = "green">
+        <li ng-repeat="patient in opdCtrl.opds"> {{patient.name}} </li>
+        </font>
+    </h4>
 </ol>
+
+<h3 ><center>
+    <font color="red">
+{{opdCtrl.message}}
+</font>
+</center>
+</h3>

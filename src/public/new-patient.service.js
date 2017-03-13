@@ -4,7 +4,7 @@
 
     function NewPatientService() {
         var service = this;
-        this.register = function (name, age, complaints, bp, temp, notes, callback) {
+        this.register = function (name, age, sex, bp, temp, notes, callback) {
             db.find({ type: 'patient_id' }, function (err, docs) {
             // docs is an array containing documents Mars, Earth, Jupiter
             // If no document is found, docs is equal to []
@@ -41,23 +41,29 @@
                     type: "patient",
                     name: name,
                     age: age,
-                    complaints: complaints,
-                    vitals: {
-                        bp: bp,
-                        temp: temp
-                    },
+                    sex: sex,
                     createDate: date.getTime(),
-                    consultationDates: [date.getTime()],
-                    notes: notes,
                     id: id
                 }
                 console.log(doc);
-                db.insert(doc, function (err, newDoc) {   // Callback is optional
-                // newDoc is the newly inserted document, including its _id
-                // newDoc has no key called notToBeSaved since its value was undefined
-                    console.log(doc);
-                    console.log(err);
-                    callback(id);
+                db.insert(doc, function (err, newDoc) {   
+                    //adding consultation also
+                    consultation = {
+                        type: "consultation",
+                        vitals: {
+                            bp: bp,
+                            temp: temp
+                        },
+                        notes: notes,
+                        date: date.getTime(),
+                        patientId: id
+                    }
+                    db.insert(consultation, function(err, doc) {
+                        console.log(doc);
+                        console.log(err);
+                        callback(id);
+                    });
+                    
                     
                 });
                 console.log(db);
@@ -71,9 +77,27 @@
             date.setSeconds(0);
             date.setMilliseconds(0);
             console.log(date.getTime());
-            db.find({ type: 'patient', consultationDates: date.getTime() }, function(err, docs) {
-                callback(docs);
+            db.find({ type: 'consultation', date: date.getTime() }, function(err, docs) {
+                ids = [];
+                console.log(docs);
+                docs.forEach(function(obj) {
+                    ids.push(obj.patientId);
+                });
+                console.log(ids);
+                callback(ids);
             })
+        }
+
+        this.getPatients = function(ids, callback) {
+            console.log(ids);
+            if(ids.length == 0) {
+                console.log('zero length');
+                callback(ids);
+            } else {
+                db.find({type: 'patient', id: {$in: ids}}, function(err, docs) {
+                    callback(docs);
+                })
+            }
         }
 
         

@@ -27,6 +27,11 @@ function routeConfig ($stateProvider) {
       controller: 'OPDController',
       controllerAs: 'opdCtrl'
     })
+    .state('public.medicines', {
+      url: '/medicnes',
+      templateUrl: 'src/public/html/medicines.html'
+      
+    })
     // .state('public.menu', {
     //   url: '/menu',
     //   templateUrl: 'src/public/menu/menu.html',

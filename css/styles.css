@@ -25,3 +25,9 @@
   position: absolute; 
   z-index: 1;
 }
+
+
+* { margin: 0; padding: 0; }
+p { padding: 10px; }
+#left { position: absolute; left: 0;  width: 45; }
+#right { position: absolute; right: 0; width: 55%; }

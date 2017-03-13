@@ -48,21 +48,17 @@
                 console.log(doc);
                 db.insert(doc, function (err, newDoc) {   
                     //adding consultation also
-                    consultation = {
-                        type: "consultation",
-                        vitals: {
-                            bp: bp,
-                            temp: temp
-                        },
-                        notes: notes,
-                        date: date.getTime(),
-                        patientId: id
-                    }
-                    db.insert(consultation, function(err, doc) {
-                        console.log(doc);
-                        console.log(err);
-                        callback(id);
-                    });
+                    callback(id);
+                    // consultation = {
+                    //     type: "consultation",
+                    //     date: date.getTime(),
+                    //     patientId: id
+                    // }
+                    // db.insert(consultation, function(err, doc) {
+                    //     console.log(doc);
+                    //     console.log(err);
+                        
+                    // });
                     
                     
                 });
@@ -99,6 +95,7 @@
                 })
             }
         }
+
 
         
 }

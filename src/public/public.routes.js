@@ -23,7 +23,9 @@ function routeConfig ($stateProvider) {
     })
     .state('public.opds', {
       url: '/opds',
-      templateUrl: 'src/public/html/opds.html'
+      templateUrl: 'src/public/html/opds.html',
+      controller: 'OPDController',
+      controllerAs: 'opdCtrl'
     })
     // .state('public.menu', {
     //   url: '/menu',

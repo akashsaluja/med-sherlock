@@ -4,7 +4,6 @@
 
     function NewPatientService() {
         var service = this;
-        service.userInfo = null;
         this.register = function (name, age, complaints, bp, temp, notes, callback) {
             db.find({ type: 'patient_id' }, function (err, docs) {
             // docs is an array containing documents Mars, Earth, Jupiter
@@ -33,6 +32,11 @@
                     
 
                 }
+                date = new Date();
+                date.setHours(0);
+                date.setMinutes(0);
+                date.setSeconds(0);
+                date.setMilliseconds(0);
                 doc = {
                     type: "patient",
                     name: name,
@@ -42,7 +46,8 @@
                         bp: bp,
                         temp: temp
                     },
-                    createDate: new Date(),
+                    createDate: date.getTime(),
+                    consultationDates: [date.getTime()],
                     notes: notes,
                     id: id
                 }
@@ -59,7 +64,17 @@
             });
             
         }
-        
+
+        this.getOPD = function(date, callback) {
+            date.setHours(0);
+            date.setMinutes(0);
+            date.setSeconds(0);
+            date.setMilliseconds(0);
+            console.log(date.getTime());
+            db.find({ type: 'patient', consultationDates: date.getTime() }, function(err, docs) {
+                callback(docs);
+            })
+        }
 
         
 }

@@ -1,18 +1,93 @@
-<h2> Hey {{patientCtrl.mess}} </h2>
-<form class="form-inline">
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="email" size = "20" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="age">Age: </label>
-    <input type="age" size = "3" class="form-control" id="age">
-  </div>
-  <select class="form-control">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
+<div class="container">
+    <h2>Registration Form </h2> 
+    <form name='regForm' class="form-inline" novalidate  >
+            
     
-</select>
+        <div>
+            <label>
+            Name<span >*</span>
+            </label>
+            <input type="text" name="name" placeholder="Name"  class="form-control"
+                    ng-model="patientCtrl.name"
+                    required
+                    minlength="3"
+                    ng-maxlength="10"/>{{ patientCtrl.name }}
+            <span ng-if="patientCtrl.name.$invalid && patientCtrl.name.$touched">
+                Name must contain more than 3 charactres and less than 10
+          </span>
+        </div>
+        <br/>
 
-  <button type="submit" class="btn btn-default" ng-click="$ctrl.submit()">Submit</button>
-</form>
+        
+
+        <div >
+            <label>
+                Age<span >*</span>
+            </label>
+            <input type="numeric" name="age" placeholder="Age" class="form-control" ng-model="patientCtrl.age"
+                    required
+                    ng-maxlength="3"
+                    ng-minlength="1"
+                    pattern="[0-9]{1,3}"
+                    /> 
+
+            <span ng-if="patientCtrl.age.$invalid && patientCtrl.age.$touched">
+                Age must be between 1-99
+            </span>
+        </div>
+        
+        <br/>
+        <div >
+            <label>
+                Sex<span >*</span>
+            </label>
+            <select ng-init="patientCtrl.sex = patientCtrl.sexes[0]" ng-model="patientCtrl.sex" ng-options="x for x in patientCtrl.sexes" ng-selected="Male">
+
+            </select>
+        </div>
+       
+
+       <div >
+            <label> <b>
+                Vitals </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </label>
+            <label>
+                BP: 
+            </label>
+            <input type="numeric" name="bp" placeholder="BP" class="form-control" ng-model="patientCtrl.vitals.bp"
+                    required
+                    ng-maxlength="3"
+                    ng-minlength="1"
+                    pattern="[0-9]{1,3}"
+                    /> {{patientCtrl.vitals.bp}}
+            
+            <label>
+                Temp: 
+            </label>
+            <input type="numeric" name="bp" placeholder="BP" class="form-control" ng-model="patientCtrl.vitals.temp"
+                    required
+                    ng-maxlength="3"
+                    ng-minlength="1"
+                    pattern="[0-9]{1,3}"
+                    /> {{patientCtrl.vitals.temp}}
+
+        </div>
+
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="patientCtrl.submit()"
+          class="btn btn-default">Submit</button>
+        
+
+            
+    </form>
+
+    <span ng-if="signup.success === true">
+                Your information has been saved
+            </span>
+        </div>
+
+
+
+</div>
+

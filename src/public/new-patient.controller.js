@@ -5,13 +5,12 @@
     NewPatientController.$inject = ['NewPatientService'];
     function NewPatientController(NewPatientService) {
         var $ctrl = this;
-        console.log(NewPatientService.register1);
         $ctrl.mess = 'hhtg';
+        $ctrl.sexes = ["Male", "Female"];
         $ctrl.success = null;
-        NewPatientService.register1();
         $ctrl.submit = function() {
             console.log('Ctrl');
-            NewPatientService.regsiter1();
+            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.vitals.bp, $ctrl.vitals.temp);
             
         }
 

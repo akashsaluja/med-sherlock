@@ -1,4 +1,8 @@
 {"a":5,"_id":"IwFlIOztA0CfPIui"}
+{"name":"Akash","age":"23","_id":"YZbYOeVBphP9Gno9"}
+{"type":"patient","name":"Akash","age":"12","vitals":{},"_id":"ZglR42FndUwSdDsJ"}
+{"name":"Akash","age":"12","_id":"bgAFQ0bD8Vf93Zu7"}
 {"a":11,"_id":"cKcdRAAvB6yo4SJF"}
 {"a":42,"_id":"ctplT8jCjP2cg7iC"}
 {"a":42,"_id":"hZ7PRiK7VcgVMJ9c"}
+{"type":"patient","name":"Akash","age":"23","complaints":"Male","vitals":{"bp":"12","temp":"70"},"_id":"GobGooWPvuYymw45"}

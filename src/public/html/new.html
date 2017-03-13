@@ -45,7 +45,7 @@
 
             </select>
         </div>
-       
+       <br/>
 
        <div >
             <label> <b>
@@ -72,6 +72,15 @@
                     /> {{patientCtrl.vitals.temp}}
 
         </div>
+        <br/>
+
+        <multiselect class="input-xlarge" multiple="true"
+            ng-model="parentCtrl.selectedCare"
+            options="c in patientCtrl.individuals"
+            change="selected()" ></multiselect>
+            <div class="well well-small">
+                {{parentCtrl.selectedCare}}
+            </div>
 
         <button
           ng-disabled="regForm.$invalid"
@@ -82,10 +91,11 @@
             
     </form>
 
-    <span ng-if="signup.success === true">
-                Your information has been saved
-            </span>
+    <span>
+                {{patientCtrl.message}}
+     </span>
         </div>
+
 
 
 

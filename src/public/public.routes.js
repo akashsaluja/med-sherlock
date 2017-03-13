@@ -29,7 +29,9 @@ function routeConfig ($stateProvider) {
     })
     .state('public.medicines', {
       url: '/medicnes',
-      templateUrl: 'src/public/html/medicines.html'
+      templateUrl: 'src/public/html/medicines.html',
+      controller: 'MedicineController',
+      controllerAs: 'medCtrl'
       
     })
     // .state('public.menu', {

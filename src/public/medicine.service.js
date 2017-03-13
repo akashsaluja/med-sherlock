@@ -12,6 +12,13 @@
             })
         }
 
+        service.getMedicines = function (callback) {
+            db.find({type: 'medicine'}, function (err, docs) {
+                callback(docs);
+            });
+
+        }
+
         
 }
 

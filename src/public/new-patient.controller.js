@@ -12,7 +12,7 @@
         $ctrl.individuals = ["Akash", "Manuj"];
         $ctrl.submit = function() {
             console.log('Ctrl');
-            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.vitals.bp, $ctrl.vitals.temp, "", this.patientRegisteredCallback);
+            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.residence, $ctrl.disease, this.patientRegisteredCallback);
             
         }
 

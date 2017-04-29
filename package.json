@@ -4,5 +4,21 @@
   "main": "main.js",
   "dependencies": {
     "nedb": "^1.8.0"
-  }
+  },
+  "author": {
+    "name": "Akashdeep Saluja","email": "akashdeep1412@gmail.com"
+  },
+  "build": {
+    "appId": "akash.med.first",
+    "mac": {
+      "category": "a.b.c.d"
+    }
+  },
+  "scripts": {
+  "pack": "build --dir",
+  "dist": "build"
+},
+"devDependencies": {
+  "electron": "1.4.15"
+}
 }

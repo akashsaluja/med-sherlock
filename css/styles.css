@@ -31,3 +31,9 @@
 p { padding: 10px; }
 #left { position: absolute; left: 0;  width: 45; }
 #right { position: absolute; right: 0; width: 55%; }
+
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}

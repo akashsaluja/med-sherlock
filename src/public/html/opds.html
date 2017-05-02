@@ -8,12 +8,37 @@
 <span ng-if="opdCtrl.opds.length > 0">  <h2>
     <font color= "blue"> Patients: </font><br/> </h2>
 </span>
-<ol>
+<table>
+    <tr>
+        <td> Sr. No. </td>
+        <td> Name </td>
+        <td> Age </td>
+        <td> Sex </td>
+        <td> Residence </td>
+        <td> Phone </td>
+        <td> Disease </td>
+        <td> Amount </td>
+    </tr>
+  <tr ng-repeat="patient in opdCtrl.opds">
+    <td> {{$index}} </td>
+    <td>{{ patient.name }}</td>
+    <td>{{ patient.age }}</td>
+    <td>{{ patient.sex }}</td>
+    <td>{{ patient.residence }}</td>
+    <td>{{ patient.phone }}</td>
+    <td>{{ patient.disease }}</td>
+    <td>{{ patient.amount }}</td>
+
+
+  </tr>
+</table>
+
+<!--<ol>
     <h4> <font color = "green">
         <li ng-repeat="patient in opdCtrl.opds"> {{patient.name}} </li>
         </font>
     </h4>
-</ol>
+</ol>-->
 
 <h3 ><center>
     <font color="red">

@@ -9,10 +9,16 @@
         $ctrl.sexes = ["Male", "Female"];
         $ctrl.success = null;
         $ctrl.message = "";
+        $ctrl.phone = "";
+        $ctrl.residence = "";
+        $ctrl.disease = "";
+        $ctrl.age = "";
+        $ctrl.amount = "";
+
         $ctrl.individuals = ["Akash", "Manuj"];
         $ctrl.submit = function() {
             console.log('Ctrl');
-            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.residence, $ctrl.disease, this.patientRegisteredCallback);
+            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.residence, $ctrl.phone, $ctrl.disease, $ctrl.amount, this.patientRegisteredCallback);
             
         }
 

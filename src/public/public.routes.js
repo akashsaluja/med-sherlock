@@ -38,7 +38,7 @@ function routeConfig ($stateProvider) {
       url: '/tests',
       templateUrl: 'src/public/html/tests.html',
       controller: 'TestsController',
-      controllerAs: 'testCtrl'
+      controllerAs: 'testsCtrl'
       
     })
     // .state('public.menu', {

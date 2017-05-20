@@ -107,6 +107,7 @@
                 callback(ids);
             } else {
                 db.find({type: 'patient', id: {$in: ids}}, function(err, docs) {
+                    console.log(docs);
                     callback(docs);
                 })
             }

@@ -1,1 +1,31 @@
-<h1> Hello Ready for test </h1>
+<div class="container">
+    <form name='testsForm' class="form-inline" novalidate  >
+        <div> 
+            <!--Section for entering patient Id-->
+            <label> Patient Id: </label>
+            <input type="numeric" name="patientId" placeholder="Patient Id" class="form-control" ng-model="testsCtrl.patientId"
+                    required
+                    ng-minlength="1"
+                    pattern="[0-9]{1,4}"
+                    ng-blur="testsCtrl.getPatientInfo()"
+                    /> 
+                    <span ng-if="testsCtrl.patientId.$invalid && testsCtrl.patientId.$touched">
+                        Id should contain numeric 3 digit characters
+                    </span>
+
+        </div>
+
+        <div> 
+            <!--Section for getting details of patient-->
+            <h3 ><font color="red">
+                <label ng-if="testsCtrl.patientMessage"> {{testsCtrl.patientMessage}} </label>
+                <br/> </font>
+                <font color = "blue">
+                <label ng-if = "testsCtrl.patient"> {{testsCtrl.patient.name}}|{{testsCtrl.patient.age}}|{{testsCtrl.patient.sex}}
+            </font></h3>
+
+        </div>
+
+        
+    </form>
+</div>

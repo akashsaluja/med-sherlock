@@ -4,7 +4,7 @@
 
     function NewPatientService() {
         var service = this;
-        this.register = function (name, age, sex, residence, phone, disease, amount, callback) {
+        this.register = function (name, age, sex, residence, phone, disease, amount, isOpd, callback) {
             db.find({ type: 'patient_id' }, function (err, docs) {
             // docs is an array containing documents Mars, Earth, Jupiter
             // If no document is found, docs is equal to []
@@ -48,24 +48,28 @@
                     id: id
                 }
                 console.log(doc);
+                
                 db.insert(doc, function (err, newDoc) {   
                     //adding consultation also
                     callback(id);
-                    consultation = {
-                        type: "consultation",
-                        date: date.getTime(),
-                        disease: disease,
-                        amount: amount,
-                        patientId: id
+                    if(isOpd) {
+                        consultation = {
+                            type: "consultation",
+                            date: date.getTime(),
+                            disease: disease,
+                            amount: amount,
+                            patientId: id
+                        }
+                        db.insert(consultation, function(err, doc) {
+                            console.log(doc);
+                            console.log(err);
+                            
+                        });
                     }
-                    db.insert(consultation, function(err, doc) {
-                        console.log(doc);
-                        console.log(err);
-                        
-                    });
                     
                     
                 });
+                
                 console.log(db);
             });
             

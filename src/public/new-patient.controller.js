@@ -10,15 +10,18 @@
         $ctrl.success = null;
         $ctrl.message = "";
         $ctrl.phone = "";
+        $ctrl.isOPD = false;
         $ctrl.residence = "";
         $ctrl.disease = "";
         $ctrl.age = "";
         $ctrl.amount = "";
+        $ctrl.isButtonDisabled = false;
 
         $ctrl.individuals = ["Akash", "Manuj"];
         $ctrl.submit = function() {
-            console.log('Ctrl');
-            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.residence, $ctrl.phone, $ctrl.disease, $ctrl.amount, this.patientRegisteredCallback);
+            console.log( $ctrl.isOPD);
+            $ctrl.isButtonDisabled = true;
+            NewPatientService.register($ctrl.name, $ctrl.age, $ctrl.sex, $ctrl.residence, $ctrl.phone, $ctrl.disease, $ctrl.amount, $ctrl.isOPD, this.patientRegisteredCallback);
             
         }
 

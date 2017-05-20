@@ -92,34 +92,55 @@
             <br/>
             <br/>
 
-            <label> <b>
-                    Disease: 
-            </label></b>
-
-            <input type="text" name="disease" placeholder="Disease" class="form-control" ng-model="patientCtrl.disease"
-                    required
-                    /> {{patientCtrl.disease}}
+         <label><b> OPD: &nbsp &nbsp</b></label>
+            <input type="checkbox"
+                ng-model="patientCtrl.isOPD"
+            >
 
             <br/>
             <br/>
 
-            <label> <b>
-                    Amount: 
-            </label></b>
+            <div ng-hide="!patientCtrl.isOPD">
+                <!--Disease section -->
+                <label> <b>
+                        Disease: 
+                </label></b>
 
-            <input type="numeric" name="amount" placeholder="Amount" class="form-control" ng-model="patientCtrl.amount"
-                    required
-                    pattern="[0-9]+"
-                    /> {{patientCtrl.amount}}
+                <input type="text" name="disease" placeholder="Disease" class="form-control" ng-model="patientCtrl.disease"
+                                ng-disabled="!patientCtrl.isOPD"
+                                ng-required="patientCtrl.isOPD"
+                                ng-hide="!patientCtrl.isOPD"
+                                required
+                                /> {{patientCtrl.disease}}
 
+                <br/>
+                <br/>
+            </div>
+
+            <div ng-hide="!patientCtrl.isOPD">
+                <!--Amount section -->
+
+                <label >  <b>
+                        Amount: 
+                </label ></b>
+
+                <input type="numeric" name="amount" placeholder="Amount" class="form-control" ng-model="patientCtrl.amount"
+                        ng-required="patientCtrl.isOPD"
+                        ng-disabled="!patientCtrl.isOPD"
+                        ng-hide="!patientCtrl.isOPD"
+                        pattern="[0-9]+"
+                        /> {{patientCtrl.amount}}
+
+                </div>
+                <br/>
+                <br/>
         </div>
-        <br/>
-        <br/>
 
         
 
+       
         <button
-          ng-disabled="regForm.$invalid"
+          ng-disabled="regForm.$invalid || patientCtrl.isButtonDisabled"
           ng-click="patientCtrl.submit()"
           class="btn btn-default">Submit</button>
         
@@ -128,7 +149,12 @@
     </form>
 
     <span>
+        <h3 ><center>
+             <font color="blue">
                 {{patientCtrl.message}}
+            </font>
+        </center>
+                
      </span>
         </div>
 

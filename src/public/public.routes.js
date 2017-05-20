@@ -34,6 +34,13 @@ function routeConfig ($stateProvider) {
       controllerAs: 'medCtrl'
       
     })
+    .state('public.tests', {
+      url: '/tests',
+      templateUrl: 'src/public/html/tests.html',
+      controller: 'TestsController',
+      controllerAs: 'testCtrl'
+      
+    })
     // .state('public.menu', {
     //   url: '/menu',
     //   templateUrl: 'src/public/menu/menu.html',

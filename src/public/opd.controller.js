@@ -5,13 +5,14 @@
     OPDController.$inject = ['NewPatientService', '$scope'];
     function OPDController(NewPatientService, $scope) {
         var $ctrl = this;
-        $ctrl.date = "";
+        $ctrl.fromDate = "";
+        $ctrl.toDate = "";
         $ctrl.opds = [];
         $ctrl.message = "";
         var patientConsultationMap = {};
         $ctrl.submit = function() {
             console.log($ctrl.date);
-            NewPatientService.getOPD($ctrl.date, $ctrl.opdCallback);
+            NewPatientService.getOPD($ctrl.fromDate, $ctrl.toDate, $ctrl.opdCallback);
             
         }
 
@@ -44,9 +45,9 @@
                 });
                 docs.sort(function(a,b) {return (a.patientId > b.patientId) ? 1 : ((b.patientId > a.patientId) ? -1 : 0);} ); 
                  $ctrl.opds = docs;
-                 $ctrl.message = "Total amount for day is " + amount;
+                 $ctrl.message = "Total amount for time period is " + amount;
             } else {
-                $ctrl.message = "No patient for day";
+                $ctrl.message = "No patient for specified time period";
             }
             $scope.$digest();
         }

@@ -75,13 +75,21 @@
             
         }
 
-        this.getOPD = function(date, callback) {
-            date.setHours(0);
-            date.setMinutes(0);
-            date.setSeconds(0);
-            date.setMilliseconds(0);
-            console.log(date.getTime());
-            db.find({ type: 'consultation', date: date.getTime() }, function(err, docs) {
+        this.getOPD = function(fromDate, toDate, callback) {
+            fromDate.setHours(0);
+            fromDate.setMinutes(0);
+            fromDate.setSeconds(0);
+            fromDate.setMilliseconds(0);
+
+            toDate.setHours(23);
+            toDate.setMinutes(59);
+            toDate.setSeconds(59);
+            toDate.setMilliseconds(999);
+            
+
+
+        
+            db.find({date: {$gte: fromDate.getTime(), $lte: toDate.getTime()}, type: {$in: ['consultation']}}, function(err, docs) {
                 ids = [];
                 console.log(docs);
                 // docs.forEach(function(obj) {

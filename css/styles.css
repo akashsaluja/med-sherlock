@@ -41,3 +41,8 @@ table, th , td {
 .tests-checkboxes {
   display: inline;
 }
+
+.disableScroll{
+      overflow-y:hidden;
+      overflow-x:hidden;
+}

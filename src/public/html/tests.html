@@ -20,12 +20,53 @@
             <h3 ><font color="red">
                 <label ng-if="testsCtrl.patientMessage"> {{testsCtrl.patientMessage}} </label>
                 <br/> </font>
-                <font color = "blue">
-                <label ng-if = "testsCtrl.patient"> {{testsCtrl.patient.name}}|{{testsCtrl.patient.age}}|{{testsCtrl.patient.sex}}
-            </font></h3>
+                <label ng-if = "testsCtrl.patient"> Patient Details:  <font color = "blue">{{testsCtrl.patient.name}}|{{testsCtrl.patient.age}}|{{testsCtrl.patient.sex}}|{{testsCtrl.patient.residence}}</font>
+            </h3>
 
         </div>
 
+        <div class="tests-checkboxes"> 
+            <input type="checkbox" name="sugar" value="Bike" ng-model = "testsCtrl.isSugar">&nbsp;Sugar&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="hbsag" value="Bike" ng-model = "testsCtrl.isHbsag">&nbsp;HBSAG
+        </div>
+        <br/>
+        <br/>
+
+        <div>
+                <!--Amount section -->
+
+                <label >  <b>
+                        Amount: 
+                </label ></b>
+
+                <input type="numeric" name="amount" placeholder="Amount" class="form-control" ng-model="testsCtrl.amount"
+                        required
+                        pattern="[0-9]+"
+                        /> 
+                <br/>
+                <br/>
+        </div>
+
+        <div>
+            <button
+                ng-disabled="testsForm.$invalid || !(testsCtrl.isSugar || testsCtrl.isHbsag) || !testsCtrl.patient"
+                ng-click="testsCtrl.submit()"
+                class="btn btn-default">Submit
+            </button>
+        </div>
+        </form>
+
+        <span>
+        <h3 ><center>
+             <font color="blue">
+                {{testsCtrl.finalMessage}}
+            </font>
+        </center>
+                
+     </span>
+
         
-    </form>
+
+        
+    
 </div>

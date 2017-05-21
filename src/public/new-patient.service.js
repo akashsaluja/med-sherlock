@@ -106,7 +106,8 @@
                 console.log('zero length');
                 callback(ids);
             } else {
-                db.find({type: 'patient', id: {$in: ids}}, function(err, docs) {
+                db.find({type: 'patient', id: {$in: Array.from(ids)}}, function(err, docs) {
+                    console.log(err);
                     console.log(docs);
                     callback(docs);
                 })

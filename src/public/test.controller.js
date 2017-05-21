@@ -50,10 +50,10 @@
                 $ctrl.noOfTests++;
             }
             if($ctrl.isSugar) {
-                TestsService.addTest($ctrl.patient.id, 'Sugar', $ctrl.amount/$ctrl.noOfTests, $ctrl.testSaveCallback);
+                TestsService.addTest($ctrl.patient.id, 'Sugar', Math.floor($ctrl.amount/$ctrl.noOfTests), $ctrl.testSaveCallback);
             }
             if($ctrl.isHbsag) {
-                TestsService.addTest($ctrl.patient.id, 'Sugar', $ctrl.amount/$ctrl.noOfTests, $ctrl.testSaveCallback);
+                TestsService.addTest($ctrl.patient.id, 'HBSAG', Math.floor($ctrl.amount/$ctrl.noOfTests), $ctrl.testSaveCallback);
             }
         }
 

@@ -12,6 +12,7 @@
 {"type":"patient","name":"TRT","age":"23","complaints":"Male","vitals":{"bp":"23","temp":"23"},"createDate":{"$$date":1489387896093},"notes":"","id":67,"_id":"3PAvmNNuiKKz0BCA"}
 {"type":"patient","name":"123","age":"12","complaints":"Male","vitals":{"bp":"12","temp":"12"},"createDate":{"$$date":1489388210932},"notes":"","id":72,"_id":"3gxFKQ4mNp6L1Npk"}
 {"type":"consultation","date":1493749800000,"disease":"cold","amount":"345","patientId":99,"_id":"41MQnoP2EcUOdum4"}
+{"type":"test","patientId":105,"name":"Sugar","amount":123,"date":1495343790614,"_id":"41hxME9BbZucANQU"}
 {"type":"consultation","date":1493749800000,"disease":"sfj","amount":"32","patientId":103,"_id":"4PHaLSAdPTYmTmNt"}
 {"_id":"4Px29IgPlNJsLUO0"}
 {"type":"consultation","date":1493404200000,"patientId":86,"_id":"4SasePxoablCQ7nX"}
@@ -43,6 +44,7 @@
 {"type":"patient","name":"Akashdeep","age":"24","sex":"Male","createDate":1493577000000,"residence":"karnal","phone":"8989931179","id":92,"_id":"CXZQ0DjbSsYpRyIC"}
 {"type":"patient","name":"Jeeval","age":"10","sex":"Female","createDate":1493404200000,"id":86,"_id":"CuRvPKfLV2txwoFI"}
 {"type":"patient","name":"Akash","age":"29","sex":"Male","createDate":1493404200000,"residence":"Karnal","id":88,"_id":"Cy2WUtLeWjpmg5sd"}
+{"type":"test","patientId":106,"name":"Sugar","amount":99,"date":1495344755457,"_id":"D1hGvJkAu6Hd48IB"}
 {"type":"consultation","date":1493749800000,"disease":"rsg","amount":"23","patientId":111,"_id":"DJXeOoDMxS1oIPXG"}
 {"type":"patient","name":"Hello","age":"23","complaints":"Male","vitals":{"bp":"70","temp":"90"},"createDate":{"$$date":1489383571738},"notes":"","id":18,"_id":"DLpW3HQVelz1Jn8O"}
 {"type":"patient","name":"Ruchi","age":"34","complaints":"Female","vitals":{"bp":"23","temp":"70"},"createDate":{"$$date":1489383614724},"notes":"","id":29,"_id":"DQvOGNXPFepF4q1F"}
@@ -179,6 +181,7 @@
 {"type":"patient","name":"Anshuman","age":"23","sex":"Male","createDate":1489343400000,"id":81,"_id":"vE0Y5q0nRlclHJV6"}
 {"type":"patient","name":"Akash","age":"23","complaints":"Male","vitals":{"bp":"80","temp":"90"},"createDate":{"$$date":1489383512472},"notes":"","id":12,"_id":"vKNSq33xmnmMsNhw"}
 {"type":"patient","name":"ssf","age":"34","sex":"Male","createDate":1493749800000,"residence":"sf","phone":"89","id":111,"_id":"vPgrlYAW49NB3Zss"}
+{"type":"test","patientId":106,"name":"Sugar","amount":99,"date":1495344755457,"_id":"vajKKY7kVObgjQll"}
 {"type":"consultation","date":1493749800000,"disease":"cold","amount":"345","patientId":98,"_id":"vqOElDAdxWS6adOh"}
 {"type":"patient","name":"Anshul","age":"23","complaints":"Male","vitals":{"bp":"70","temp":"90"},"createDate":{"$$date":1489387775892},"notes":"","id":63,"_id":"vvzgZAhEkJDNeNis"}
 {"type":"consultation","date":1493404200000,"notes":"Cold","patientId":87,"_id":"vySz6TkGqavzaP3M"}
@@ -192,4 +195,8 @@
 {"type":"consultation","date":1493749800000,"disease":"sfj","amount":"32","patientId":102,"_id":"yNk2gWNNnNw9YTWs"}
 {"type":"patient","name":"Abc","age":"23","sex":"Male","createDate":1493749800000,"residence":"jij","phone":"89","id":107,"_id":"yP0pzMGn204titEn"}
 {"type":"patient","name":"Tree","age":"23","complaints":"Male","vitals":{"bp":"3","temp":"35"},"createDate":{"$$date":1489380027842},"_id":"zx4TdLcg4TOo5qsa"}
-{"type":"test","patientId":105,"name":"Sugar","amount":123,"date":1495343790614,"_id":"41hxME9BbZucANQU"}
+{"type":"patient_id","value":116,"_id":"561BZfaUUjhwsFUd"}
+{"type":"patient","name":"Akashdeep Saluja","age":"24","sex":"Male","createDate":1495305000000,"residence":"Karnal","phone":"8989931179","id":116,"_id":"vSLMdKVMFkIDmzCy"}
+{"type":"consultation","date":1495305000000,"disease":"Cold","amount":"1000","patientId":116,"_id":"TsnFl3lnmN9Zraov"}
+{"type":"test","patientId":116,"name":"Sugar","amount":1250,"date":1495352761863,"_id":"ELtftT6JTVZLVJeI"}
+{"type":"test","patientId":116,"name":"HBSAG","amount":1250,"date":1495352761863,"_id":"l7GzWxJjuoVNCN0h"}

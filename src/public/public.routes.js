@@ -41,6 +41,13 @@ function routeConfig ($stateProvider) {
       controllerAs: 'testsCtrl'
       
     })
+    .state('public.search', {
+      url: '/search',
+      templateUrl: 'src/public/html/search.html',
+      controller: 'SearchController',
+      controllerAs: 'searchCtrl'
+      
+    })
     // .state('public.menu', {
     //   url: '/menu',
     //   templateUrl: 'src/public/menu/menu.html',

@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Patient  Search</h2>
+    <div item-width="">
+    <form class="form-inline" novalidate  >
+    <input type="text" placeholder="Enter patient Info" 
+        ng-model="searchCtrl.query"
+        class="form-control"
+        ng-maxlength="25">
+        &nbsp; 
+        <button class="btn btn-default" 
+                ng-click="searchCtrl.getInfo()"> 
+                <img src = "resources/search.png" height = "20" width = "20"/> 
+        </button>
+    </form>
+    
+    </div>
+
+</div>

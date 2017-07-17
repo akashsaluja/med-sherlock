@@ -114,8 +114,19 @@
             }
         }
 
+        this.getAllPatients = function(callback) {
+            
+            
+            db.find({type: 'patient'}, function(err, docs) {
+                    console.log(err);
+                    console.log(docs);
+                    callback(docs);
+                })
+            }
+        }
+
 
         
 }
 
-})();
+)();

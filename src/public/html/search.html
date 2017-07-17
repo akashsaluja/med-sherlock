@@ -8,11 +8,23 @@
         ng-maxlength="25">
         &nbsp; 
         <button class="btn btn-default" 
-                ng-click="searchCtrl.getInfo()"> 
+                ng-click="searchCtrl.getInfo()"
+                type="submit"> 
                 <img src = "resources/search.png" height = "20" width = "20"/> 
         </button>
     </form>
     
     </div>
+
+    <hr/>
+
+    <div>
+        <ol>
+            <li ng-repeat="patient in searchCtrl.patients | filter: searchCtrl.filterSearchResults">
+                <!-- <span ng-if="patient.name.includes(searchCtrl.query)">     -->
+                    {{patient.name}} 
+                <!-- </span> -->
+            </li>
+        </ol>
 
 </div>

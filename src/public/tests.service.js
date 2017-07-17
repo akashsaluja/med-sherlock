@@ -35,7 +35,7 @@
         
             db.find({date: {$gte: fromDate.getTime(), $lte: toDate.getTime()}, type: {$in: ['test']}}, function(err, docs) {
                 ids = [];
-                console.log(docs);
+                // console.log(docs);
                 // docs.forEach(function(obj) {
                 //     ids.push(obj.patientId);
                 // });

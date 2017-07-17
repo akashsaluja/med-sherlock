@@ -19,11 +19,20 @@
     <hr/>
 
     <div>
-        <ol>
-            <li ng-repeat="patient in searchCtrl.patients | filter: searchCtrl.filterSearchResults">
-                <!-- <span ng-if="patient.name.includes(searchCtrl.query)">     -->
-                    {{patient.name}} 
-                <!-- </span> -->
+        <table>
+            <tr>
+                <td> Patient Id </td>
+                <td> Name </td>
+                <td> Age </td>
+                <td> Sex </td>
+                <td> Residence </td>
+            </tr>
+            <tr ng-if="searchCtrl.query.length > 2" ng-repeat="patient in searchCtrl.patients | filter: searchCtrl.filterSearchResults">
+                <td>{{patient.id}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.sex}}</td>
+                <td>{{patient.residence}}</td>
             </li>
         </ol>
 

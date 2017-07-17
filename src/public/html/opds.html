@@ -6,11 +6,24 @@
   <input type="submit" class="btn btn-default" ng-click="opdCtrl.submit()">
 </form>
 
+<div> 
+    Filters: 
+    &nbsp; Male
+    <input type="checkbox"
+         ng-model="opdCtrl.male" ng-checked="true" >
+    &nbsp; Female
+    <input type="checkbox"
+         ng-model="opdCtrl.female" ng-checked="true" >
 
+    &nbsp; Child(Less than 5 years)
+    <input type="checkbox"
+         ng-model="opdCtrl.child" ng-checked="true">
+</div>
+<br/>
 <span ng-if="opdCtrl.opds.length > 0">  <h2>
     <font color= "blue"> Patients: </font><br/> </h2>
 </span>
-<table>
+<table ng-init="opdCtrl.total=0">
     <tr>
         <td> Sr. No. </td>
         <td> Name </td>
@@ -21,7 +34,7 @@
         <td> Type </td>
         <td> Amount </td>
     </tr>
-  <tr ng-repeat="patient in opdCtrl.opds">
+  <tr ng-init="opdCtrl.total=0" ng-repeat="patient in opdCtrl.opds | filter: opdCtrl.filterResults">
     <td> {{$index}} </td>
     <td>{{ patient.name }}</td>
     <td>{{ patient.age }}</td>
@@ -44,7 +57,7 @@
 
 <h3 ><center>
     <font color="red">
-{{opdCtrl.message}}
+Total amount for time period is&nbsp;{{opdCtrl.total}}
 </font>
 </center>
 </h3>

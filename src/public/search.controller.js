@@ -10,6 +10,9 @@
         var $ctrl = this;
 
         $ctrl.patients = [];
+        $ctrl.male = true;
+        $ctrl.female = true;
+        $ctrl.child = true;
         $ctrl.getInfo = function() {
             if(!$ctrl.query) {
                    return; 

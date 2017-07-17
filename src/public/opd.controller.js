@@ -9,6 +9,10 @@
         $ctrl.toDate = "";
         $ctrl.opds = [];
         $ctrl.message = "";
+        $ctrl.male = true;
+        $ctrl.female = true;
+        $ctrl.child = true;
+        $ctrl.total = 0;
         var patientMap = {};
         var patientIds = new Set();
         var entries = [];
@@ -93,6 +97,29 @@
             }
             $scope.$digest();
         }
+
+
+        $ctrl.filterResults = function(item) {
+            if($ctrl.opds[0] == item) {
+                console.log('first item');
+                console.log(item);
+                $ctrl.total = 0;
+            }
+            console.log($ctrl.total);
+            
+            var isMale = item.sex == "Male";
+            if((isMale && $ctrl.male) || (!isMale && $ctrl.female) || (item.age <= 5 && $ctrl.child)) {
+                if(item.amount) {
+                    $ctrl.total = $ctrl.total + parseInt(item.amount);
+                }
+                return true;
+            }
+            return false;
+            
+        }
+
+    
+
 
 
 
